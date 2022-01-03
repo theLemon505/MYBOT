@@ -1,0 +1,2 @@
+# MYBOT
+a personal ai
