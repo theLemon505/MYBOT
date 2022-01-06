@@ -1,2 +1,2 @@
-def put():
+def put(data):
     pass
