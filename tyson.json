@@ -1,0 +1,12 @@
+{
+    "name": "tyson",
+    "type": "tyson",
+    "layers": {
+        "input": 2,
+        "hidden": [
+            2,
+            2
+        ],
+        "output": 2
+    }
+}

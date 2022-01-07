@@ -5,5 +5,5 @@ if __name__ == "__main__":
     text = input("please enter initialization command: ")
     if text == "generate":
         init_generator()
-    elif text == "plugin ai":
+    elif text == "plugin":
         init_plugin()
