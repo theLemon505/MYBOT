@@ -1,4 +1,9 @@
-from engine.input.input import await_data
+from generator.generator import init_generator
+from plugin.plugin import init_plugin
 
 if __name__ == "__main__":
-    await_data()
+    text = input("please enter initialization command: ")
+    if text == "generate":
+        init_generator()
+    elif text == "plugin ai":
+        init_plugin()
