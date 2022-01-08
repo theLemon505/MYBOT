@@ -16,7 +16,10 @@ def init_plugin():
         print("training...")
         Trainer(json.loads(open(f).read()), ["!",".","?",","])
     elif train == "n":
-        return
+        chat(bot_json)
+
+def chat(json_data):
+    print("chat with " + json_data["name"])
 
 def write_json(new_data, filename):
     with open(filename,'r+') as file:

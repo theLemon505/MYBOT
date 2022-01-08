@@ -7,3 +7,4 @@ if __name__ == "__main__":
         init_generator()
     elif text == "plugin":
         init_plugin()
+        init_plugin()
