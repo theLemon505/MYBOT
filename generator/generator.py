@@ -18,6 +18,7 @@ def init_generator():
         params["layers"].update({"input":input_layer})
         params["layers"].update({"hidden":hidden_layers})
         params["layers"].update({"output":output_layer})
+        params.update({"intents":{}})
         create_bot(params)
 
     if text == "update bot":
