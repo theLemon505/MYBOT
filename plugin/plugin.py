@@ -25,9 +25,9 @@ def chat(json_data):
     print("chat with " + json_data["name"])
     lemmatizer = WordNetLemmatizer()
     intents = json_data["intents"]
-    words = pickle.load(open("words.pkl", "rb"))
-    classes = pickle.load(open("classes.pkl", "rb"))
-    model = load_model("speech.model")
+    words = pickle.load(open(json_data["name"] + "/" + "words.pkl", "rb"))
+    classes = pickle.load(open(json_data["name"] + "/" + "classes.pkl", "rb"))
+    model = load_model(json_data["name"] + "/" + "speech.model")
 
 def write_json(new_data, filename):
     with open(filename,'r+') as file:

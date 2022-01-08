@@ -1,4 +1,5 @@
 import json
+import os
 
 def init_generator():
     print('initializing bot generator')
@@ -34,6 +35,7 @@ def init_generator():
 
 def create_bot(params):
     print('creating new bot')
-    bot_file = open(params["name"] + ".json", "x")    
+    os.mkdir(params["name"])
+    bot_file = open(params["name"] + "/" + params["name"] + ".json", "x")    
     json_object = json.dumps(params, indent = 4) 
     bot_file.write(json_object)

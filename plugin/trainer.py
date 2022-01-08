@@ -40,8 +40,8 @@ class Trainer:
 
         self.classes = sorted(set(self.classes))
 
-        pickle.dump(self.words, open("words.pkl", "wb"))
-        pickle.dump(self.words, open("classes.pkl", "wb"))
+        pickle.dump(self.words, open(json_data["name"] + "/" + "words.pkl", "wb"))
+        pickle.dump(self.words, open(json_data["name"] + "/" + "classes.pkl", "wb"))
 
         training = []
         ouput_empty = [0] * len(self.classes)
@@ -79,5 +79,5 @@ class Trainer:
         model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
         model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
-        model.save('speech.model')
+        model.save(json_data["name"] + "/" + 'speech.model')
         print('done')

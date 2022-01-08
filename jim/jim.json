@@ -1,6 +1,13 @@
 {
-    "name": "tyson",
-    "type": "tyson",
+    "name": "jim",
+    "type": "jim",
+    "layers": {
+        "input": 64,
+        "hidden": [
+            85
+        ],
+        "output": 65
+    },
     "intents": [
         {
             "tag": "greeting",
@@ -115,13 +122,5 @@
             ],
             "context_filter": "rentalday"
         }
-    ],
-    "layers": {
-        "input": 2,
-        "hidden": [
-            2,
-            2
-        ],
-        "output": 2
-    }
+    ]
 }
