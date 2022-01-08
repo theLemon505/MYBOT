@@ -1,6 +1,9 @@
 import tensorflow as tf
+from nltk.stem import WordNetLemmatizer
+from tensorflow.keras.models import load_model
 import json
 from .trainer import Trainer
+import pickle
 
 def init_plugin():
     f = input("please enter the path to the bot's json file: ")
@@ -20,6 +23,11 @@ def init_plugin():
 
 def chat(json_data):
     print("chat with " + json_data["name"])
+    lemmatizer = WordNetLemmatizer()
+    intents = json_data["intents"]
+    words = pickle.load(open("words.pkl", "rb"))
+    classes = pickle.load(open("classes.pkl", "rb"))
+    model = load_model("speech.model")
 
 def write_json(new_data, filename):
     with open(filename,'r+') as file:

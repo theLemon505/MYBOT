@@ -79,5 +79,5 @@ class Trainer:
         model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
         model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
-        model.save('chatbot_mode.model')
+        model.save('speech.model')
         print('done')
