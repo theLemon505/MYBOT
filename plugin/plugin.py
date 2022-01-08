@@ -1,5 +1,6 @@
 import tensorflow as tf
 import json
+from .trainer import Trainer
 
 def init_plugin():
     f = input("please enter the path to the bot's json file: ")
@@ -12,6 +13,8 @@ def init_plugin():
         data_set = open(data_set_path)
         data = json.load(data_set)
         write_json(data, f)
+        print("training...")
+        Trainer(json.loads(open(f).read()), ["!",".","?",","])
     elif train == "n":
         return
 
@@ -28,8 +31,3 @@ def write_json(new_data, filename):
 
 def create_nural_network(layers):
     pass
-
-class sa_trainer:
-    def __init__(self, bot):
-        self.data = bot["intents"]
-        print(self.data)
